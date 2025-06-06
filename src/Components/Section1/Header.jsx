@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from '../../assets/hero1.jpg';
 import Color from '../../assets/colors.png';
 import bars from '../../assets/bars-solid.svg';
@@ -8,6 +8,20 @@ import { motion, AnimatePresence } from "framer-motion";
 const Header = () => {
     const [isOpen, setisOpen] = useState(false)
     const Togglebtn = () => setisOpen(prev => !prev)
+    const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+    useEffect(() => {
+        const handleLoad = () => {
+            setIsPageLoaded(true);
+        };
+
+        if (document.readyState === "complete") {
+            setIsPageLoaded(true);
+        } else {
+            window.addEventListener("load", handleLoad);
+            return () => window.removeEventListener("load", handleLoad);
+        }
+    }, []);
 
     const navItems = [
         "Home",
@@ -40,29 +54,31 @@ const Header = () => {
                     </div>
 
                     <ul className="hidden md:flex justify-between list-none w-auto gap-8 font-semibold text-base">
-                        {navItems.map((item, index) => (
-                            <motion.li
-                                key={item}
-                                initial={{ opacity: 0, y: -10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.2 * index }}
-                                whileHover={{ scale: 1.1 }}
-                            >
-                                <a
-                                    href="#"
-                                    className="text-white relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white hover:after:w-full after:transition-all after:duration-300"
+                        {navItems.map((item, index) =>
+                            isPageLoaded && (
+                                <motion.li
+                                    key={item}
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.2 * index }}
+                                    whileHover={{ scale: 1.1 }}
                                 >
-                                    {item}
-                                </a>
-                            </motion.li>
-                        ))}
+                                    <a
+                                        href="#"
+                                        className="text-white relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white hover:after:w-full after:transition-all after:duration-300"
+                                    >
+                                        {item}
+                                    </a>
+                                </motion.li>
+                            )
+                        )}
                     </ul>
                     <button className="hidden md:block cursor-pointer rounded-sm bg-[#0066FF] hover:bg-[#0055cc] transition-all duration-300 transform hover:scale-105 text-white font-roboto font-bold text-base text-center px-4 py-3">
                         <span className="block lg:hidden">Join</span>
                         <span className="hidden lg:block">Join Waiting List Now</span>
                     </button>
 
-                    <motion.button
+                    {isPageLoaded && (<motion.button
                         whileTap={{ scale: 0.9 }}
                         whileHover={{ scale: 1.1 }}
                         className="w-6 cursor-pointer block md:hidden"
@@ -77,13 +93,14 @@ const Header = () => {
                             transition={{ duration: 0.3 }}
                         />
                     </motion.button>
+                    )}
 
 
                 </nav>
 
 
                 <AnimatePresence>
-                    {isOpen && (
+                    {isOpen && isPageLoaded && (
                         <motion.ul
                             variants={menuVariants}
                             initial="hidden"
@@ -105,12 +122,13 @@ const Header = () => {
                     )}
                 </AnimatePresence>
 
-                <div className="absolute z-20 container mx-auto p-6  w-3/4  md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-black/60 top-[27%] text-white lg:h-full">
+
+                <div className="absolute z-20 container mx-auto p-6  w-3/4  md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-black/60 top-[27%] text-white">
 
                     <div className="flex flex-col justify-between h-full items-start gap-6">
                         <img src={Color} alt="Color-Block" className="w-[80px] h-[16px]" />
 
-                        <motion.h1
+                        {isPageLoaded && (<motion.h1
                             initial={{ opacity: 0, x: 80 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.9, ease: "easeOut" }}
@@ -118,20 +136,22 @@ const Header = () => {
                         >
                             Your Perfect Plus One, On Demand
                         </motion.h1>
-                        <motion.p
-                            initial={{ opacity: 0, y: 80 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="font-manrope font-normal text-[20px] leading-[27.32px] tracking-[0%]"
-                        >
-                            Transform any occasion into a memorable experience with a carefully matched companion.
-                        </motion.p>
-
+                        )}
+                        {isPageLoaded && (
+                            <motion.p
+                                initial={{ opacity: 0, y: 80 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                className="font-manrope font-normal text-[20px] leading-[27.32px] tracking-[0%]"
+                            >
+                                Transform any occasion into a memorable experience with a carefully matched companion.
+                            </motion.p>
+                        )}
                         <button
                             className="rounded-4xl px-[30px] py-[20px] cursor-pointer bg-[#0066FF] shadow-[0px_0px_20px_0px_#639AE19C] text-white font-poppins font-normal text-[23px] leading-[22px] hover:scale-105 transition-all duration-300"
                         >
                             {/* Animate Mobile Text */}
-                            <motion.span
+                            {isPageLoaded && (<motion.span
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -139,16 +159,17 @@ const Header = () => {
                             >
                                 Join
                             </motion.span>
-
+                            )}
                             {/* Animate Desktop Text */}
-                            <motion.span
+                            {isPageLoaded && (<motion.span
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: 0.3 }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
                                 className="hidden sm:block"
                             >
                                 Join Waiting List Now
                             </motion.span>
+                            )}
                         </button>
                     </div>
                 </div>
