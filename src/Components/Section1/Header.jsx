@@ -44,6 +44,7 @@ const Header = () => {
         <>
             <section className='relative w-screen h-screen flex justify-center' >
                 <img src={Hero} alt="Hero" className='absolute  w-full h-full inset-0 object-cover' />
+                {/* navbar */}
                 {isPageLoaded && (
                     <motion.nav
                         initial={{ opacity: 0, y: -40 }}
@@ -111,7 +112,7 @@ const Header = () => {
                 )}
 
 
-
+                {/* resposive dropdown list items  */}
                 <AnimatePresence>
                     {isOpen && isPageLoaded && (
                         <motion.ul
@@ -135,7 +136,7 @@ const Header = () => {
                     )}
                 </AnimatePresence>
 
-
+                {/* certered Div   */}
                 {isPageLoaded && (
                     <motion.div
                         initial={{ opacity: 0, y: 50, scale: 0.95 }}
