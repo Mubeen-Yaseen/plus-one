@@ -165,16 +165,16 @@ const Header = () => {
                                 Transform any occasion into a memorable experience with a carefully matched companion.
                             </motion.p>
 
-                            <motion.button
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 1.2 }}
+                            <button
+                                // initial={{ opacity: 0, x: 20 }}
+                                // animate={{ opacity: 1, x: 0 }}
+                                // transition={{ duration: 0.9, delay: 0.5 }}
                                 className="rounded-4xl px-[30px] py-[20px] cursor-pointer bg-[#0066FF] shadow-[0px_0px_20px_0px_#639AE19C] text-white font-poppins font-normal text-[23px] leading-[22px] hover:scale-105 transition-all duration-300"
                             >
                                 <motion.span
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.5, delay: 1.4 }}
+                                    transition={{ duration: 0.9, delay: 0.3 }}
                                     className="block sm:hidden"
                                 >
                                     Join
@@ -182,12 +182,12 @@ const Header = () => {
                                 <motion.span
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.5, delay: 1.5 }}
+                                    transition={{ duration: 0.9, delay: 0.3 }}
                                     className="hidden sm:block"
                                 >
                                     Join Waiting List Now
                                 </motion.span>
-                            </motion.button>
+                            </button>
                         </div>
                     </motion.div>
                 )}
