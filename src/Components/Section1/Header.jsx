@@ -11,7 +11,7 @@ const Header = () => {
                 <nav className='absolute z-10 container mx-auto flex justify-between items-center border-[1.5px] border-gray-300 rounded-[10px] px-6 py-3 top-[30px] bg-black/40'>
                     <div className='flex gap-2 justify-between items-center'>
                         <div>
-                            <button className="w-[40px] h-[40px] rounded-sm bg-[#0066FF] text-white font-roboto font-extrabold pb-[2px] pr-[4px]">+1
+                            <button className="w-[41px] h-[40px] rounded-sm bg-[#0066FF] text-white font-roboto font-extrabold pb-[2px] pr-[4px]">+1
                             </button>
                         </div>
                         <div><h1 className='text-white font-extrabold'>Plus One</h1></div>
