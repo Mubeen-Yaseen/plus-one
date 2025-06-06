@@ -44,23 +44,29 @@ const Header = () => {
         <>
             <section className='relative w-screen h-screen flex justify-center' >
                 <img src={Hero} alt="Hero" className='absolute  w-full h-full inset-0 object-cover' />
-                <nav className='absolute z-10 container mx-auto flex justify-between items-center border-[1.5px] border-gray-300 rounded-[10px] px-6 py-3 top-[30px] bg-black/40'>
-                    <div className='flex gap-2 justify-between items-center'>
-                        <div>
-                            <button className="w-[41px] h-[40px] rounded-sm bg-[#0066FF] text-white font-roboto font-extrabold pb-[2px] pr-[4px]">+1
-                            </button>
+                {isPageLoaded && (
+                    <motion.nav
+                        initial={{ opacity: 0, y: -40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                        className='absolute z-10 container mx-auto flex justify-between items-center border-[1.5px] border-gray-300 rounded-[10px] px-6 py-3 top-[30px] bg-black/40'
+                    >
+                        <div className='flex gap-2 justify-between items-center'>
+                            <div>
+                                <button className="w-[41px] h-[40px] rounded-sm bg-[#0066FF] text-white font-roboto font-extrabold pb-[2px] pr-[4px]">
+                                    +1
+                                </button>
+                            </div>
+                            <div><h1 className='text-white font-extrabold'>Plus One</h1></div>
                         </div>
-                        <div><h1 className='text-white font-extrabold'>Plus One</h1></div>
-                    </div>
 
-                    <ul className="hidden md:flex justify-between list-none w-auto gap-8 font-semibold text-base">
-                        {navItems.map((item, index) =>
-                            isPageLoaded && (
+                        <ul className="hidden md:flex justify-between list-none w-auto gap-8 font-semibold text-base">
+                            {navItems.map((item, index) => (
                                 <motion.li
                                     key={item}
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.9, delay: 0.2 * index }}
+                                    transition={{ duration: 0.9, delay: 0.5 + index * 0.1 }}
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     <a
@@ -70,33 +76,40 @@ const Header = () => {
                                         {item}
                                     </a>
                                 </motion.li>
-                            )
-                        )}
-                    </ul>
-                    <button className="hidden md:block cursor-pointer rounded-sm bg-[#0066FF] hover:bg-[#0055cc] transition-all duration-300 transform hover:scale-105 text-white font-roboto font-bold text-base text-center px-4 py-3">
-                        <span className="block lg:hidden">Join</span>
-                        <span className="hidden lg:block">Join Waiting List Now</span>
-                    </button>
+                            ))}
+                        </ul>
 
-                    {isPageLoaded && (<motion.button
-                        whileTap={{ scale: 0.9 }}
-                        whileHover={{ scale: 1.1 }}
-                        className="w-6 cursor-pointer block md:hidden"
-                        onClick={Togglebtn}
-                    >
-                        <motion.img
-                            key={isOpen ? "close" : "bars"}
-                            src={isOpen ? close : bars}
-                            alt="Menu Icon"
+                        <motion.button
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.7 }}
+                            className="hidden md:block cursor-pointer rounded-sm bg-[#0066FF] hover:bg-[#0055cc] transition-all duration-300 transform hover:scale-105 text-white font-roboto font-bold text-base text-center px-4 py-3"
+                        >
+                            <span className="block lg:hidden">Join</span>
+                            <span className="hidden lg:block">Join Waiting List Now</span>
+                        </motion.button>
+
+                        <motion.button
+                            whileTap={{ scale: 0.9 }}
+                            whileHover={{ scale: 1.1 }}
                             initial={{ opacity: 0, rotate: -90 }}
                             animate={{ opacity: 1, rotate: 0 }}
-                            transition={{ duration: 0.9 }}
-                        />
-                    </motion.button>
-                    )}
+                            transition={{ duration: 0.8, delay: 1 }}
+                            className="w-6 cursor-pointer block md:hidden"
+                            onClick={Togglebtn}
+                        >
+                            <motion.img
+                                key={isOpen ? "close" : "bars"}
+                                src={isOpen ? close : bars}
+                                alt="Menu Icon"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.3 }}
+                            />
+                        </motion.button>
+                    </motion.nav>
+                )}
 
-
-                </nav>
 
 
                 <AnimatePresence>
@@ -123,56 +136,61 @@ const Header = () => {
                 </AnimatePresence>
 
 
-                <div className="absolute z-20 container mx-auto p-6  w-3/4  md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-black/60 top-[27%] text-white">
+                {isPageLoaded && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+                        className="absolute z-20 container mx-auto p-6 w-3/4 md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-black/60 top-[27%] text-white"
+                    >
+                        <div className="flex flex-col justify-between h-full items-start gap-6">
+                            <img src={Color} alt="Color-Block" className="w-[80px] h-[16px]" />
 
-                    <div className="flex flex-col justify-between h-full items-start gap-6">
-                        <img src={Color} alt="Color-Block" className="w-[80px] h-[16px]" />
+                            <motion.h1
+                                initial={{ opacity: 0, x: 80 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.9, ease: "easeOut", delay: 0.8 }}
+                                className="font-poppins font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-9 md:leading-[72px] tracking-[0%]"
+                            >
+                                Your Perfect Plus One, On Demand
+                            </motion.h1>
 
-                        {isPageLoaded && (<motion.h1
-                            initial={{ opacity: 0, x: 80 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.9, ease: "easeOut" }}
-                            className="font-poppins font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-9 md:leading-[72px] tracking-[0%]"
-                        >
-                            Your Perfect Plus One, On Demand
-                        </motion.h1>
-                        )}
-                        {isPageLoaded && (
                             <motion.p
                                 initial={{ opacity: 0, y: 80 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}
                                 className="font-manrope font-normal text-[20px] leading-[27.32px] tracking-[0%]"
                             >
                                 Transform any occasion into a memorable experience with a carefully matched companion.
                             </motion.p>
-                        )}
-                        <button
-                            className="rounded-4xl px-[30px] py-[20px] cursor-pointer bg-[#0066FF] shadow-[0px_0px_20px_0px_#639AE19C] text-white font-poppins font-normal text-[23px] leading-[22px] hover:scale-105 transition-all duration-300"
-                        >
-                            {/* Animate Mobile Text */}
-                            {isPageLoaded && (<motion.span
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.9, delay: 0.2 }}
-                                className="block sm:hidden"
+
+                            <motion.button
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 1.2 }}
+                                className="rounded-4xl px-[30px] py-[20px] cursor-pointer bg-[#0066FF] shadow-[0px_0px_20px_0px_#639AE19C] text-white font-poppins font-normal text-[23px] leading-[22px] hover:scale-105 transition-all duration-300"
                             >
-                                Join
-                            </motion.span>
-                            )}
-                            {/* Animate Desktop Text */}
-                            {isPageLoaded && (<motion.span
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0., delay: 0.2 }}
-                                className="hidden sm:block"
-                            >
-                                Join Waiting List Now
-                            </motion.span>
-                            )}
-                        </button>
-                    </div>
-                </div>
+                                <motion.span
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5, delay: 1.4 }}
+                                    className="block sm:hidden"
+                                >
+                                    Join
+                                </motion.span>
+                                <motion.span
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5, delay: 1.5 }}
+                                    className="hidden sm:block"
+                                >
+                                    Join Waiting List Now
+                                </motion.span>
+                            </motion.button>
+                        </div>
+                    </motion.div>
+                )}
+
             </section>
         </>
     )
