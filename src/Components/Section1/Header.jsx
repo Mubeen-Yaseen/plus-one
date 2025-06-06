@@ -43,7 +43,7 @@ const Header = () => {
     return (
         <>
             <section className='relative w-screen h-screen flex justify-center' >
-                <img src={Hero} alt="Hero" className='absolute  w-full h-full inset-0 object-cover' />
+                <img src={Hero} alt="Hero" className='absolute w-full h-full inset-0 object-cover brightness-[0.9] contrast-[0.95] blur-[0.5px]' />
                 {/* navbar */}
                 {isPageLoaded && (
                     <motion.nav
