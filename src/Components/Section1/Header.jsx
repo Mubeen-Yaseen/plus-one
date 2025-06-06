@@ -31,8 +31,8 @@ const Header = () => {
     ];
     const menuVariants = {
         hidden: { opacity: 0, y: -20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.4, staggerChildren: 0.1 } },
-        exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.9, staggerChildren: 0.1 } },
+        exit: { opacity: 0, y: -20, transition: { duration: 0.9 } },
     };
 
     const itemVariants = {
@@ -60,7 +60,7 @@ const Header = () => {
                                     key={item}
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.4, delay: 0.2 * index }}
+                                    transition={{ duration: 0.9, delay: 0.2 * index }}
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     <a
@@ -90,7 +90,7 @@ const Header = () => {
                             alt="Menu Icon"
                             initial={{ opacity: 0, rotate: -90 }}
                             animate={{ opacity: 1, rotate: 0 }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration: 0.9 }}
                         />
                     </motion.button>
                     )}
@@ -154,7 +154,7 @@ const Header = () => {
                             {isPageLoaded && (<motion.span
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
+                                transition={{ duration: 0.9, delay: 0.2 }}
                                 className="block sm:hidden"
                             >
                                 Join
@@ -164,7 +164,7 @@ const Header = () => {
                             {isPageLoaded && (<motion.span
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
+                                transition={{ duration: 0., delay: 0.2 }}
                                 className="hidden sm:block"
                             >
                                 Join Waiting List Now
