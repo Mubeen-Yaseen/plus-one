@@ -66,9 +66,9 @@ const Work = () => {
             >
               <img src={Calender} alt="Icon" />
               <h1 className='text-[20px] py-[15px]'>Enjoy Your Event</h1>
-              <motion.p className='text-[13px] text-[#535353]' variants={childVariant}>
+              <p className='text-[13px] text-[#535353]' variants={childVariant}>
                 Attend your function with confidence, knowing you have a compatible companion by your side.
-              </motion.p>
+              </p>
             </motion.div>
           </div>
         </div>
