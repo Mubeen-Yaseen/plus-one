@@ -30,9 +30,9 @@ const Header = () => {
         "Contact Us",
     ];
     const menuVariants = {
-        hidden: { opacity: 0, y: -20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.9, staggerChildren: 0.1 } },
-        exit: { opacity: 0, y: -20, transition: { duration: 0.9 } },
+        hidden: { opacity: 0, x: -20 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.9, staggerChildren: 0.1 } },
+        exit: { opacity: 0, x: -20, transition: { duration: 0.9 } },
     };
 
     const itemVariants = {
@@ -73,6 +73,7 @@ const Header = () => {
                                     <a
                                         href="#"
                                         className="text-white relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white hover:after:w-full after:transition-all after:duration-300"
+
                                     >
                                         {item}
                                     </a>
@@ -96,7 +97,7 @@ const Header = () => {
                             initial={{ opacity: 0, rotate: -90 }}
                             animate={{ opacity: 1, rotate: 0 }}
                             transition={{ duration: 0.8, delay: 1 }}
-                            className="w-6 cursor-pointer block md:hidden"
+                            className="w-10 h-10 p-2 border-2 border-gray-600 rounded-md flex items-center justify-center md:hidden"
                             onClick={Togglebtn}
                         >
                             <motion.img
@@ -106,8 +107,14 @@ const Header = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.3 }}
+                                className="w-full h-full object-contain"
                             />
                         </motion.button>
+
+
+
+
+
                     </motion.nav>
                 )}
 
@@ -120,13 +127,18 @@ const Header = () => {
                             initial="hidden"
                             animate="visible"
                             exit="exit"
-                            className="md:hidden w-11/12 container mx-auto rounded-md absolute z-40 top-[90px] left-0 right-0 bg-black/60 text-white flex flex-col pl-8 gap-4 py-6"
+                            className="md:hidden w-[60%] h-screen  rounded-md absolute z-40  left-0 right-0 bg-white text-black/70 flex flex-col pl-8 gap-10 py-14 font-bold"
                         >
                             {navItems.map((item) => (
                                 <motion.li key={item} variants={itemVariants}>
-                                    <a href="#" className="hover:bg-blue-400">{item}</a>
+                                    <a
+                                        href="#"
+                                    >
+                                        {item}
+                                    </a>
                                 </motion.li>
                             ))}
+
                             <motion.li variants={itemVariants}>
                                 <button className="mt-4 bg-[#0066FF] px-4 py-2 rounded-sm text-white font-semibold">
                                     Join Now
@@ -166,9 +178,6 @@ const Header = () => {
                             </motion.p>
 
                             <button
-                                // initial={{ opacity: 0, x: 20 }}
-                                // animate={{ opacity: 1, x: 0 }}
-                                // transition={{ duration: 0.9, delay: 0.5 }}
                                 className="rounded-4xl cursor-pointer bg-[#0066FF] shadow-[0px_0px_20px_0px_#639AE19C] text-white font-poppins font-normal  leading-[22px] hover:scale-105 transition-all duration-300"
                             >
                                 <motion.span
