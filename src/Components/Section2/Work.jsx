@@ -18,13 +18,13 @@ const Work = () => {
   }
   return (
     <>
-      <div className='relative w-full h-screen bg-[#FFFFFF] my-16 md:my-0'>
-        <div className='w-full h-[454px] relative mx-auto bg-[#F9FAFC]'>
+      <div className='relative w-full h-screen bg-[#FFFFFF] mb-7'>
+        <div className='w-full h-full relative mx-auto bg-[#F9FAFC]'>
           <motion.h1
             className="font-poppins font-medium text-[56px] leading-[61.6px] text-center"
-            initial={{ opacity: 0, y: -100 }} // from top
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 4, ease: 'easeOut' }}
+            initial={{ opacity: 0, x: 100 }} // from top
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
             How it works
@@ -37,7 +37,7 @@ const Work = () => {
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              className="w-[350px] h-[230px] pt-[30px] pl-[30px] pb-[30px] bg-white rounded-[16px] shadow-lg "
+              className="w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-lg "
             >
               <img src={Earth} alt="Icon" />
               <h1 className='text-[20px] py-[15px]'>Explore Trusted Partners</h1>
@@ -47,7 +47,7 @@ const Work = () => {
             </motion.div>
 
             {/* Center Card */}
-            <div className="relative w-[350px] h-[230px] p-[30px] bg-white rounded-[16px] shadow-lg overflow-visible">
+            <div className="relative w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-lg overflow-visible">
               <img src={Team} alt="Icon" />
               <h1 className='text-[20px] py-[15px]'>Connect & Coordinate</h1>
               <p className='text-[13px] text-[#535353]'>
@@ -62,7 +62,7 @@ const Work = () => {
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              className="w-[350px] h-[230px] p-[30px] bg-white rounded-[16px] shadow-lg"
+              className="w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-lg"
             >
               <img src={Calender} alt="Icon" />
               <h1 className='text-[20px] py-[15px]'>Enjoy Your Event</h1>

@@ -144,8 +144,8 @@ const Header = () => {
                         transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
                         className="absolute z-20 container mx-auto p-6 w-3/4 md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-black/60 top-[27%] text-white"
                     >
-                        <div className="flex flex-col justify-between h-full items-start gap-6">
-                            <img src={Color} alt="Color-Block" className="w-[80px] h-[16px]" />
+                        <div className="flex flex-col justify-between h-full items-start gap-2 lg:gap-6">
+                            <img src={Color} alt="Color-Block" className="w-[80px] h-[16px] mb-4 lg:mb-0" />
 
                             <motion.h1
                                 initial={{ opacity: 0, x: 80 }}
@@ -160,7 +160,7 @@ const Header = () => {
                                 initial={{ opacity: 0, y: 80 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}
-                                className="font-manrope font-normal text-[20px] leading-[27.32px] tracking-[0%]"
+                                className="font-manrope font-normal text-sm lg:text-xl leading-[27.32px] tracking-[0%]"
                             >
                                 Transform any occasion into a memorable experience with a carefully matched companion.
                             </motion.p>
@@ -169,13 +169,13 @@ const Header = () => {
                                 // initial={{ opacity: 0, x: 20 }}
                                 // animate={{ opacity: 1, x: 0 }}
                                 // transition={{ duration: 0.9, delay: 0.5 }}
-                                className="rounded-4xl px-[30px] py-[20px] cursor-pointer bg-[#0066FF] shadow-[0px_0px_20px_0px_#639AE19C] text-white font-poppins font-normal text-[23px] leading-[22px] hover:scale-105 transition-all duration-300"
+                                className="rounded-4xl cursor-pointer bg-[#0066FF] shadow-[0px_0px_20px_0px_#639AE19C] text-white font-poppins font-normal  leading-[22px] hover:scale-105 transition-all duration-300"
                             >
                                 <motion.span
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.9, delay: 0.3 }}
-                                    className="block sm:hidden"
+                                    className="block sm:hidden text-sm lg:text-lg px-4 py-4 rounded-xl"
                                 >
                                     Join
                                 </motion.span>
@@ -183,7 +183,7 @@ const Header = () => {
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.9, delay: 0.3 }}
-                                    className="hidden sm:block"
+                                    className="hidden sm:block px-[30px] py-[20px]"
                                 >
                                     Join Waiting List Now
                                 </motion.span>
