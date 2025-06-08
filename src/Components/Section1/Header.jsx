@@ -50,7 +50,7 @@ const Header = () => {
                         initial={{ opacity: 0, y: -40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                        className='absolute z-10 container mx-auto flex justify-between items-center border-[1.5px] border-gray-300 rounded-[10px] px-6 py-3 top-[30px] bg-black/40'
+                        className='absolute z-10 container mx-auto w-11/12 flex justify-between items-center border-[1.5px] border-gray-300 rounded-[10px] px-6 py-3 top-[30px] bg-black/40'
                     >
                         <div className='flex gap-2 justify-between items-center'>
                             <div>
@@ -120,7 +120,7 @@ const Header = () => {
                             initial="hidden"
                             animate="visible"
                             exit="exit"
-                            className="md:hidden absolute z-40 top-[90px] left-0 right-0 bg-black/60 text-white flex flex-col pl-8 gap-4 py-6"
+                            className="md:hidden w-11/12 container mx-auto rounded-md absolute z-40 top-[90px] left-0 right-0 bg-black/60 text-white flex flex-col pl-8 gap-4 py-6"
                         >
                             {navItems.map((item) => (
                                 <motion.li key={item} variants={itemVariants}>
