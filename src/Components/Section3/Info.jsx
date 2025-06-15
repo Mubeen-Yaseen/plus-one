@@ -82,7 +82,7 @@ const itemVariantRight = {
 
 const Info = () => {
     return (
-        <div className="w-full">
+        <div className="w-full overflow-x-hidden">
             <motion.h1
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}

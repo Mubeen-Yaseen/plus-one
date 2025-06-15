@@ -16,7 +16,7 @@ const features = [
 
 const Choose = () => {
     return (
-        <section className="w-full bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <section className="w-full container mx-auto bg-white py-12 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
             <motion.h1
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
