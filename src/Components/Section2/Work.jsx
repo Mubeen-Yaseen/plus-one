@@ -21,71 +21,85 @@ const Work = () => {
   }
   return (
     <>
-      <div className='relative w-full  bg-[#FFFFFF] py-7'>
-        <div className='w-full h-full relative mx-auto bg-[#F9FAFC]'>
+      <div className='relative w-screen flex flex-col  items-center bg-[#FFFFFF] h-auto min-h-[67vh] sm:min-h-[60vh] md:min-h-[40] lg:min-h-[55vh] xl:min-h-[75vh] 2xl:min-h-screen   '>
+
+        {/* ----------bg- layer---------- */}
+        <div className='absolute w-[70%] h-[10%] xl:h-[70%] xl:bg-[#EDEDED] z-0 rounded-b-md'>
           <motion.h1
-            className="font-poppins font-medium text-[56px] leading-[61.6px] text-center"
-            initial={{ opacity: 0, }} // from top
-            whileInView={{ opacity: 1, }}
+            className="font-poppins font-medium text-[40px] sm:text-[45px] md:text-[50px] lg:text-[56px] leading-[61.6px] text-center"
+            initial={{ opacity: 0, y: 40 }} // you can add 'y' for more impact
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             How it works
           </motion.h1>
+        </div>
 
-          <div className="flex gap-12 justify-center items-center w-full flex-col md:flex-row sm:flex-wrap mt-20">
+        {/* ---------------Cards------------  */}
+        <div className="relative xl:absolute container  mx-auto flex gap-12  justify-center items-center w-screen flex-col md:flex-row sm:flex-wrap mt-32 z-10">
 
-            {/* Left Card with Animation - Edited Text */}
-            <div className="w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-lg">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={cardVariants}
-              >
-                <img src={Earth} alt="Icon" />
-                <h1 className='text-[20px] py-[15px]'>Explore Trusted Partners</h1>
-                <p className='text-[13px] text-[#535353] pr-[20px]'>
-                  Discover curated profiles with verified details to find the right companion for your next event.
-                </p>
-              </motion.div>
-            </div>
+          {/* Left Card with Animation - Edited Text */}
+          <div className="w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-2xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+            >
+              <img src={Earth} alt="Icon" />
+              <h1 className='text-[20px] py-[15px]'>Explore Trusted Partners</h1>
+              <p className='text-[13px] text-[#535353] pr-[20px]'>
+                Review detailed profiles of potential plus-ones, including their interests, experience, and availability.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Center Card */}
+          {/* Wrap the center card and the rectangle together */}
+          <div className="relative w-auto h-auto">
+
+            {/* Rectangle Behind the Card */}
+            <img
+              src={Rectangle}
+              alt="Decorative"
+              className="absolute -bottom-5 -left-5 w-[90px] h-[90px] z-0 hidden xl:block"
+            />
 
             {/* Center Card */}
-            <div className="relative w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-lg overflow-visible">
+            <div className="relative w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-2xl z-10">
               <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={cardVariants}
+                className="relative z-10"
               >
                 <img src={Team} alt="Icon" />
-                <h1 className='text-[20px] py-[15px]'>Connect & Coordinate</h1>
-                <p className='text-[13px] text-[#535353]'>
+                <h1 className="text-[20px] py-[15px]">Connect & Coordinate</h1>
+                <p className="text-[13px] text-[#535353]">
                   Chat with your chosen companion through our secure platform to discuss event details and expectations.
-                </p>
-                <img
-                  src={Rectangle} alt="" className="absolute -bottom-5 -left-5 w-[90px] h-[90px] z-[-1] hidden xl:block" />
-              </motion.div>
-            </div>
-
-            {/* Right Card with Animation */}
-            <div className="w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-lg">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={cardVariants}
-
-              >
-                <img src={Calender} alt="Icon" />
-                <h1 className='text-[20px] py-[15px]'>Enjoy Your Event</h1>
-                <p className='text-[13px] text-[#535353]'>
-                  Attend your function with confidence, knowing you have a compatible companion by your side.
                 </p>
               </motion.div>
             </div>
           </div>
+
+          {/* Right Card with Animation */}
+          <div className="w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-2xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+            >
+              <img src={Calender} alt="Icon" />
+              <h1 className='text-[20px] py-[15px]'>Enjoy Your Event</h1>
+              <p className='text-[13px] text-[#535353]'>
+                Attend your function with confidence, knowing you have a compatible companion by your side.
+              </p>
+            </motion.div>
+          </div>
+
         </div>
       </div >
     </>

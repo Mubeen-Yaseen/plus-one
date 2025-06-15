@@ -6,59 +6,75 @@ import Frame4 from '../../assets/frame4.png'
 import Frame5 from '../../assets/frame5.png'
 import Frame6 from '../../assets/frame6.png'
 
+const sections = [
+    {
+        image: Frame1,
+        title: 'Wedding celebrations',
+        text: 'Make every wedding unforgettable with the perfect companion by your side, turning moments into memories. Thanks to Plus One.',
+        reverse: false,
+    },
+    {
+        image: Frame2,
+        title: 'Corporate events & networking',
+        text: 'Elevate your corporate events and networking experiences with a professional companion who complements your presence.',
+        reverse: true,
+    },
+    {
+        image: Frame3,
+        title: 'Family gatherings',
+        text: 'Bring warmth and ease to family gatherings with a friendly companion who blends in seamlessly and enhances every moment.',
+        reverse: false,
+    },
+    {
+        image: Frame4,
+        title: 'Travel companions',
+        text: 'Turn every journey into an unforgettable adventure with a travel companion who shares your excitement and makes every destination even more special.',
+        reverse: true,
+    },
+    {
+        image: Frame5,
+        title: 'Local experiences & adventures',
+        text: 'Discover the best of local experiences and adventures with a companion who makes every moment more exciting and memorable.',
+        reverse: false,
+    },
+    {
+        image: Frame6,
+        title: 'Social functions & galas',
+        text: 'Shine at social functions and galas with a charming companion who ensures you make a statement and enjoy every moment to the fullest.',
+        reverse: true,
+    },
+]
+
 const Info = () => {
     return (
-        <>
-            {/* <div className='w-[100%] h-[4051px]'>
-                <div className='w-[100%] h-[668px] bg-[#F9FAFC] flex justify-around items-center'>
-                    <div className='w-[490px] h-[170px] '>
-                        <h1 className='text-[50px]'>Wedding celebrations</h1>
-                        <p className='text-[16px] text-[#535353] pt-[10px]'>Make every wedding unforgettable with the perfect <br /> companion by your side, turning moments into memories. <br /> Thanks to Plus One.</p>
+        <div className="w-full">
+            <h1 className="py-20 md:pb-20 md:pt-10 lg:pt-10 xl:pt-0 font-poppins font-semibold text-[35px] sm:text-[40px] md:text-[50px] lg:text-[56px] leading-[110%] tracking-tight text-center">
+                Plus One Perfect For
+            </h1>
+
+            {sections.map((section, idx) => (
+                <div
+                    key={idx}
+                    className={`w-full py-10 px-10 ${idx % 2 === 0 ? 'bg-[#F9FAFC]' : 'bg-white'
+                        } flex flex-col-reverse xl:flex-row ${section.reverse ? 'xl:flex-row-reverse' : ''
+                        } items-center justify-between gap-10`}
+                >
+                    <div className="max-w-xl text-center xl:text-left">
+                        <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-semibold leading-tight">
+                            {section.title}
+                        </h2>
+                        <p className="text-base sm:text-lg text-[#535353] mt-4">
+                            {section.text}
+                        </p>
                     </div>
-                    <div><img src={Frame1} alt="" className='w-[500px] h-[570px]' /></div>
+                    <img
+                        src={section.image}
+                        alt={section.title}
+                        className="w-full max-w-md sm:max-w-lg xl:max-w-[500px] h-auto object-contain"
+                    />
                 </div>
-                <div className='w-[100%] h-[668px] bg-white flex justify-around items-center'>
-                    <div><img src={Frame2} alt="" className='w-[500px] h-[570px]' /></div>
-                    <div className='w-[490px] h-[170px] '>
-                        <h1 className='text-[50px] leading-[50px]'>Corporate events & networking</h1>
-                        <p className='text-[16px] text-[#535353] pt-[10px]'>
-                            Elevate your corporate events and networking experiences <br />with a professional companion who complements your <br />presence.</p>
-                    </div>
-                </div>
-                <div className='w-[100%] h-[668px] bg-[#F9FAFC] flex justify-around items-center'>
-                    <div className='w-[490px] h-[170px] '>
-                        <h1 className='text-[50px]'>Family gatherings</h1>
-                        <p className='text-[16px] text-[#535353] pt-[10px]'>
-                            Bring warmth and ease to family gatherings with a friendly <br />companion who blends in seamlessly and enhances every <br /> moment.</p>
-                    </div>
-                    <div><img src={Frame3} alt="" className='w-[500px] h-[570px]' /></div>
-                </div>
-                <div className='w-[100%] h-[668px] bg-white flex justify-around items-center'>
-                    <div><img src={Frame4} alt="" className='w-[500px] h-[570px]' /></div>
-                    <div className='w-[490px] h-[170px] '>
-                        <h1 className='text-[50px]'>Travel companions</h1>
-                        <p className='text-[16px] text-[#535353] pt-[10px]'>
-                            Turn every journey into an unforgettable adventure with a <br />travel companion who shares your excitement and makes <br />every destination even more special.</p>
-                    </div>
-                </div>
-                <div className='w-[100%] h-[668px] bg-[#F9FAFC] flex justify-around items-center'>
-                    <div className='w-[490px] h-[170px] '>
-                        <h1 className='text-[50px] leading-[50px]'>Local experiences & adventures</h1>
-                        <p className='text-[16px] text-[#535353] pt-[10px]'>
-                            Discover the best of local experiences and adventures with a <br />companion who makes every moment more exciting and <br />memorable.</p>
-                    </div>
-                    <div><img src={Frame5} alt="" className='w-[500px] h-[570px]' /></div>
-                </div>
-                <div className='w-[100%] h-[668px] bg-white flex justify-around items-center'>
-                    <div><img src={Frame6} alt="" className='w-[500px] h-[570px]' /></div>
-                    <div className='w-[490px] h-[170px] '>
-                        <h1 className='text-[50px] leading-[50px]'>Social functions & galas</h1>
-                        <p className='text-[16px] text-[#535353] pt-[10px]'>
-                            Shine at social functions and galas with a charming <br />companion who ensures you make a statement and enjoy <br /> every moment to the fullest</p>
-                    </div>
-                </div>
-            </div> */}
-        </>
+            ))}
+        </div>
     )
 }
 
