@@ -1,10 +1,11 @@
-import React from 'react'
-import Frame1 from '../../assets/frame1.png'
-import Frame2 from '../../assets/frame2.png'
-import Frame3 from '../../assets/frame3.png'
-import Frame4 from '../../assets/frame4.png'
-import Frame5 from '../../assets/frame5.png'
-import Frame6 from '../../assets/frame6.png'
+import React from 'react';
+import { motion } from 'framer-motion';
+import Frame1 from '../../assets/frame1.png';
+import Frame2 from '../../assets/frame2.png';
+import Frame3 from '../../assets/frame3.png';
+import Frame4 from '../../assets/frame4.png';
+import Frame5 from '../../assets/frame5.png';
+import Frame6 from '../../assets/frame6.png';
 
 const sections = [
     {
@@ -43,39 +44,93 @@ const sections = [
         text: 'Shine at social functions and galas with a charming companion who ensures you make a statement and enjoy every moment to the fullest.',
         reverse: true,
     },
-]
+];
+
+// Animation Variants
+const containerVariant = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.3,
+        },
+    },
+};
+
+const itemVariantLeft = {
+    hidden: { opacity: 1, x: -60 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.8,
+            ease: 'linear',
+        },
+    },
+};
+
+const itemVariantRight = {
+    hidden: { opacity: 1, x: 60 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.8,
+            ease: 'linear',
+        },
+    },
+};
 
 const Info = () => {
     return (
         <div className="w-full">
-            <h1 className="py-20 md:pb-20 md:pt-10 lg:pt-10 xl:pt-0 font-poppins font-semibold text-[35px] sm:text-[40px] md:text-[50px] lg:text-[56px] leading-[110%] tracking-tight text-center">
+            <motion.h1
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.9, ease: 'easeOut' }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="py-20 md:pb-20 md:pt-10 lg:pt-10 xl:pt-0 font-poppins font-semibold text-[35px] sm:text-[40px] md:text-[50px] lg:text-[56px] leading-[110%] tracking-tight text-center"
+            >
                 Plus One Perfect For
-            </h1>
+            </motion.h1>
 
-            {sections.map((section, idx) => (
-                <div
-                    key={idx}
-                    className={`w-full py-10 px-10 ${idx % 2 === 0 ? 'bg-[#F9FAFC]' : 'bg-white'
-                        } flex flex-col-reverse xl:flex-row ${section.reverse ? 'xl:flex-row-reverse' : ''
-                        } items-center justify-between gap-10`}
-                >
-                    <div className="max-w-xl text-center xl:text-left">
-                        <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-semibold leading-tight">
-                            {section.title}
-                        </h2>
-                        <p className="text-base sm:text-lg text-[#535353] mt-4">
-                            {section.text}
-                        </p>
-                    </div>
-                    <img
-                        src={section.image}
-                        alt={section.title}
-                        className="w-full max-w-md sm:max-w-lg xl:max-w-[500px] h-auto object-contain"
-                    />
-                </div>
-            ))}
+            {sections.map((section, idx) => {
+                const textAnimation = section.reverse ? itemVariantRight : itemVariantLeft;
+                const imageAnimation = section.reverse ? itemVariantLeft : itemVariantRight;
+
+                return (
+                    <motion.div
+                        key={idx}
+                        variants={containerVariant}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.01 }}
+                        className={`w-full py-16 px-10 ${idx % 2 === 0 ? 'bg-[#F9FAFC]' : 'bg-white'
+                            } flex flex-col-reverse xl:flex-row ${section.reverse ? 'xl:flex-row-reverse' : ''
+                            } items-center justify-between gap-10`}
+                    >
+                        <motion.div
+                            variants={textAnimation}
+                            className="max-w-xl text-center xl:text-left"
+                        >
+                            <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-semibold leading-tight">
+                                {section.title}
+                            </h2>
+                            <p className="text-base sm:text-lg text-[#535353] mt-4">
+                                {section.text}
+                            </p>
+                        </motion.div>
+
+                        <motion.img
+                            variants={imageAnimation}
+                            src={section.image}
+                            alt={section.title}
+                            className="w-full max-w-md sm:max-w-lg xl:max-w-[500px] h-auto object-contain"
+                        />
+                    </motion.div>
+                );
+            })}
         </div>
-    )
-}
+    );
+};
 
-export default Info
+export default Info;

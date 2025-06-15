@@ -24,7 +24,7 @@ const Work = () => {
       <div className='relative w-screen flex flex-col  items-center bg-[#FFFFFF] h-auto min-h-[67vh] sm:min-h-[60vh] md:min-h-[40] lg:min-h-[55vh] xl:min-h-[75vh] 2xl:min-h-screen   '>
 
         {/* ----------bg- layer---------- */}
-        <div className='absolute w-[70%] h-[10%] xl:h-[70%] xl:bg-[#EDEDED] z-0 rounded-b-md'>
+        <div className='absolute w-[70%] h-[10%] xl:h-[90%] xl:bg-[#EDEDED] z-0 rounded-b-md'>
           <motion.h1
             className="font-poppins font-medium text-[40px] sm:text-[45px] md:text-[50px] lg:text-[56px] leading-[61.6px] text-center"
             initial={{ opacity: 0, y: 40 }} // you can add 'y' for more impact
