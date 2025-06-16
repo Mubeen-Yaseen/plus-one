@@ -16,6 +16,7 @@ const features = [
 
 const Choose = () => {
     return (
+        // -------------Why Choose Us ----------------
         <section className="w-full container mx-auto bg-white py-12 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
             <motion.h1
                 initial={{ opacity: 0, x: 30 }}

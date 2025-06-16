@@ -80,7 +80,7 @@ const itemVariantRight = {
     },
 };
 
-const Info = () => {
+const Events = () => {
     return (
         <div className="w-full overflow-x-hidden">
             <motion.h1
@@ -133,4 +133,4 @@ const Info = () => {
     );
 };
 
-export default Info;
+export default Events;
