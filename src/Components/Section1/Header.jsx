@@ -147,7 +147,7 @@ const Header = () => {
 
                             {/* Join Now Button at bottom */}
                             <motion.li variants={itemVariants} className="list-none">
-                                <button className="bg-[#0066FF] px-12 py-4 rounded-sm text-white font-semibold w-full mb-16">
+                                <button className="bg-[#0066FF]  py-3 rounded-sm text-white font-semibold w-full mb-16">
                                     Join Now
                                 </button>
                             </motion.li>
