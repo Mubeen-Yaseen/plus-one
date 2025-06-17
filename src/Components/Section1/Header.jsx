@@ -4,6 +4,7 @@ import Color from '../../assets/colors.png';
 import bars from '../../assets/bars-solid.svg';
 import close from '../../assets/xmark-solid.svg';
 import Icon from '../../assets/Icon.png';
+import Logo from '../../assets/logo.png'
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
@@ -128,26 +129,33 @@ const Header = () => {
                             initial="hidden"
                             animate="visible"
                             exit="exit"
-                            className="md:hidden w-[60%] h-screen  rounded-md absolute z-40  left-0 right-0 bg-white text-black/70 flex flex-col pl-8 gap-10 py-14 font-bold"
+                            className="md:hidden w-[60%] h-screen rounded-md absolute z-40 left-0 right-0 bg-white text-black/70 flex flex-col justify-between py-10 px-8 font-bold"
                         >
-                            {navItems.map((item) => (
-                                <motion.li key={item} variants={itemVariants}>
-                                    <a
-                                        href="#"
-                                    >
-                                        {item}
-                                    </a>
-                                </motion.li>
-                            ))}
+                            {/* Logo at the top */}
+                            <div>
+                                <img src={Logo} alt="Logo" className="w-[10rem] h-auto mb-6" />
 
-                            <motion.li variants={itemVariants}>
-                                <button className="mt-4 bg-[#0066FF] px-4 py-2 rounded-sm text-white font-semibold">
+                                {/* Nav Items slightly below logo */}
+                                <div className="flex flex-col gap-8 mt-16">
+                                    {navItems.map((item) => (
+                                        <motion.li key={item} variants={itemVariants} className="text-lg list-none py-4">
+                                            <a href="#">{item}</a>
+                                        </motion.li>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Join Now Button at bottom */}
+                            <motion.li variants={itemVariants} className="list-none">
+                                <button className="bg-[#0066FF] px-12 py-4 rounded-sm text-white font-semibold w-full mb-2">
                                     Join Now
                                 </button>
                             </motion.li>
                         </motion.ul>
                     )}
                 </AnimatePresence>
+
+
 
                 {/* certered Div   */}
                 {isPageLoaded && (
