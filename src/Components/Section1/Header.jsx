@@ -138,7 +138,7 @@ const Header = () => {
                                 {/* Nav Items slightly below logo */}
                                 <div className="flex flex-col gap-8 mt-16">
                                     {navItems.map((item) => (
-                                        <motion.li key={item} variants={itemVariants} className="text-lg list-none py-4">
+                                        <motion.li key={item} variants={itemVariants} className="list-none py-4 text-sm">
                                             <a href="#">{item}</a>
                                         </motion.li>
                                     ))}
