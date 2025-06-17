@@ -129,7 +129,7 @@ const Header = () => {
                             initial="hidden"
                             animate="visible"
                             exit="exit"
-                            className="md:hidden w-[60%] h-screen rounded-md absolute z-40 left-0 right-0 bg-white text-black/70 flex flex-col justify-between py-10 px-8 font-bold"
+                            className="md:hidden w-[67%] h-screen rounded-md absolute z-40 left-0 right-0 bg-white text-black/70 flex flex-col justify-between py-10 px-8 font-bold"
                         >
                             {/* Logo at the top */}
                             <div>
@@ -147,7 +147,7 @@ const Header = () => {
 
                             {/* Join Now Button at bottom */}
                             <motion.li variants={itemVariants} className="list-none">
-                                <button className="bg-[#0066FF] px-12 py-4 rounded-sm text-white font-semibold w-full mb-2">
+                                <button className="bg-[#0066FF] px-12 py-4 rounded-sm text-white font-semibold w-full mb-4">
                                     Join Now
                                 </button>
                             </motion.li>
