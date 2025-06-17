@@ -9,7 +9,7 @@ const MobileExp = () => {
     return (
         <>
             {/* Section 1 - Mobile Visual + Heading */}
-            <div className="flex flex-col-reverse xl:flex-row items-center justify-around p-10 gap-10 xl:gap-0 overflow-x-hidden">
+            <div className="flex flex-col-reverse lg:flex-row items-center justify-around p-10 gap-10 xl:gap-0 overflow-x-hidden">
                 {/* Text Section */}
                 <motion.div
                     className="flex flex-col gap-2 text-center xl:text-left"
@@ -66,7 +66,7 @@ const MobileExp = () => {
             </div>
 
             {/* Section 2 - Safety Info */}
-            <div className="flex flex-col xl:flex-row items-center justify-around gap-10 px-6 py-20 bg-[#F9FAFC] overflow-x-hidden">
+            <div className="flex flex-col lg:flex-row items-center justify-around gap-10 px-6 py-20 bg-[#F9FAFC] overflow-x-hidden">
                 {/* Left - Safety Title */}
                 <motion.div
                     className="text-center xl:text-left max-w-lg"

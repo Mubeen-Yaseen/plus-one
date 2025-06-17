@@ -105,12 +105,12 @@ const Events = () => {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.01 }}
                         className={`w-full py-16 px-10 ${idx % 2 === 0 ? 'bg-[#F9FAFC]' : 'bg-white'
-                            } flex flex-col-reverse xl:flex-row ${section.reverse ? 'xl:flex-row-reverse' : ''
+                            } flex flex-col-reverse lg:flex-row ${section.reverse ? 'lg:flex-row-reverse' : ''
                             } items-center justify-between gap-10`}
                     >
                         <motion.div
                             variants={textAnimation}
-                            className="max-w-xl text-center xl:text-left"
+                            className="max-w-xl text-center lg:text-left"
                         >
                             <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-semibold leading-tight">
                                 {section.title}
@@ -121,11 +121,15 @@ const Events = () => {
                         </motion.div>
 
                         <motion.img
-                            variants={imageAnimation}
+                            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{ duration: 0.8, ease: 'easeOut' }}
+                            viewport={{ once: false, amount: 0.2 }}
                             src={section.image}
                             alt={section.title}
                             className="w-full max-w-md sm:max-w-lg xl:max-w-[500px] h-auto object-contain"
                         />
+
                     </motion.div>
                 );
             })}

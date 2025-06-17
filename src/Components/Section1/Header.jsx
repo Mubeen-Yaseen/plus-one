@@ -3,6 +3,7 @@ import Hero from '../../assets/hero1.jpg';
 import Color from '../../assets/colors.png';
 import bars from '../../assets/bars-solid.svg';
 import close from '../../assets/xmark-solid.svg';
+import Icon from '../../assets/Icon.png';
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
@@ -54,9 +55,9 @@ const Header = () => {
                     >
                         <div className='flex gap-2 justify-between items-center'>
                             <div>
-                                <button className="w-[41px] h-[40px] rounded-sm bg-[#0066FF] text-white font-roboto font-extrabold pb-[2px] pr-[4px]">
-                                    +1
-                                </button>
+
+                                <img src={Icon} alt="+1 Icon" className="w-auto h-auto" />
+
                             </div>
                             <div><h1 className='text-white font-extrabold'>Plus One</h1></div>
                         </div>
