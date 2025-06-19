@@ -29,7 +29,7 @@ const Form = () => {
     };
 
     return (
-        <div className="max-w-md  mx-auto my-10 bg-white p-6 rounded-lg shadow-2xl">
+        <div className="max-w-md  mx-auto my-0 md:my-10 bg-white p-6 rounded-lg shadow-2xl">
             <div className='flex justify-between items-start'>
                 <h1 className="text-lg font-semibold mb-4">I am interested as:</h1>
                 <Link to='/'> <button className='w-6 h-auto cursor-pointer border-2 border-gray-100'>X</button></Link>
