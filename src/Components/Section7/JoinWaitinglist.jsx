@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Frame from '../../assets/frame_bottom.png';
+import { Link } from 'react-router-dom';
 
 const JoinWaitinglist = () => {
     return (
@@ -46,15 +47,16 @@ const JoinWaitinglist = () => {
                     <p className="text-base xl:leading-10 xl:w-5/6">
                         Don’t go solo—hire the perfect companion for your next event or trip. Book your Plus One now and make sure you never miss out on a great experience!
                     </p>
-
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ type: 'spring', stiffness: 300 }}
-                        className="bg-white cursor-pointer text-blue-600 text-base sm:text-lg font-semibold px-6 py-3 rounded-full shadow-lg"
-                    >
-                        Join Waiting List Now
-                    </motion.button>
+                    <Link to='/contactform'>
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: 'spring', stiffness: 300 }}
+                            className="bg-white cursor-pointer text-blue-600 text-base sm:text-lg font-semibold px-6 py-3 rounded-full shadow-lg"
+                        >
+                            Join Waiting List Now
+                        </motion.button>
+                    </Link>
                 </motion.div>
             </div>
         </motion.div>

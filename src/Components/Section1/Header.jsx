@@ -6,6 +6,7 @@ import close from '../../assets/xmark-solid.svg';
 import Icon from '../../assets/Icon.png';
 import Logo from '../../assets/logo.png'
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     const [isOpen, setisOpen] = useState(false)
@@ -82,17 +83,17 @@ const Header = () => {
                                 </motion.li>
                             ))}
                         </ul>
-
-                        <motion.button
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, delay: 0.7 }}
-                            className="hidden md:block cursor-pointer rounded-sm bg-[#0066FF] hover:bg-[#0055cc] transition-all duration-300 transform hover:scale-105 text-white font-roboto font-bold text-base text-center px-4 py-3"
-                        >
-                            <span className="block lg:hidden">Join</span>
-                            <span className="hidden lg:block">Join Waiting List Now</span>
-                        </motion.button>
-
+                        <Link to='/contactform'>
+                            <motion.button
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.8, delay: 0.7 }}
+                                className="hidden md:block cursor-pointer rounded-sm bg-[#0066FF] hover:bg-[#0055cc] transition-all duration-300 transform hover:scale-105 text-white font-roboto font-bold text-base text-center px-4 py-3"
+                            >
+                                <span className="block lg:hidden">Join</span>
+                                <span className="hidden lg:block">Join Waiting List Now</span>
+                            </motion.button>
+                        </Link>
                         <motion.button
                             whileTap={{ scale: 0.9 }}
                             whileHover={{ scale: 1.1 }}
@@ -147,9 +148,11 @@ const Header = () => {
 
                             {/* Join Now Button at bottom */}
                             <motion.li variants={itemVariants} className="list-none">
-                                <button className="bg-[#0066FF]  py-3 rounded-sm text-white font-semibold w-full mb-16">
-                                    Join Now
-                                </button>
+                                <Link to='/contactform'>
+                                    <button className="bg-[#0066FF]  py-3 rounded-sm text-white font-semibold w-full mb-16">
+                                        Join Now
+                                    </button>
+                                </Link>
                             </motion.li>
                         </motion.ul>
                     )}
@@ -185,27 +188,28 @@ const Header = () => {
                             >
                                 Transform any occasion into a memorable experience with a carefully matched companion.
                             </motion.p>
-
-                            <button
-                                className="rounded-4xl cursor-pointer bg-[#0066FF] shadow-[0px_0px_20px_0px_#639AE19C] text-white font-poppins font-normal  leading-[22px] hover:scale-105 transition-all duration-300"
-                            >
-                                <motion.span
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.9, delay: 0.3 }}
-                                    className="block sm:hidden text-sm lg:text-lg px-4 py-4 rounded-xl"
+                            <Link to='/contactform'>
+                                <button
+                                    className="rounded-4xl cursor-pointer bg-[#0066FF] shadow-[0px_0px_20px_0px_#639AE19C] text-white font-poppins font-normal  leading-[22px] hover:scale-105 transition-all duration-300"
                                 >
-                                    Join
-                                </motion.span>
-                                <motion.span
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.9, delay: 0.3 }}
-                                    className="hidden sm:block px-[30px] py-[20px]"
-                                >
-                                    Join Waiting List Now
-                                </motion.span>
-                            </button>
+                                    <motion.span
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.9, delay: 0.3 }}
+                                        className="block sm:hidden text-sm lg:text-lg px-4 py-4 rounded-xl"
+                                    >
+                                        Join
+                                    </motion.span>
+                                    <motion.span
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.9, delay: 0.3 }}
+                                        className="hidden sm:block px-[30px] py-[20px]"
+                                    >
+                                        Join Waiting List Now
+                                    </motion.span>
+                                </button>
+                            </Link>
                         </div>
                     </motion.div>
                 )}
