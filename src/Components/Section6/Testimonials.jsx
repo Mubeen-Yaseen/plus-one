@@ -77,7 +77,7 @@ const Testimonials = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center py-10">
+        <div id='safety' className="flex flex-col items-center justify-center py-10">
             <motion.h1
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
