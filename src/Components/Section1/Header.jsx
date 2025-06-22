@@ -114,7 +114,7 @@ const Header = () => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="bg-white text-black/75 md:hidden w-[75%] h-screen rounded-md absolute z-40 left-0  flex flex-col justify-between py-10 px-8 font-bold"
+                        className="bg-white text-black/60 md:hidden w-[75%] h-screen rounded-md absolute z-40 left-0  flex flex-col justify-between py-10 px-8 font-bold"
                     >
                         <div>
                             <img src={Logo} alt="Logo" className="w-[10rem] h-auto mb-6" />
