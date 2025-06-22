@@ -53,7 +53,7 @@ export default function Events() {
                         <div
                             key={idx}
                             className={`sticky top-0 h-screen z-[${idx + 1}] flex flex-col-reverse lg:flex-row ${reverse ? 'lg:flex-row-reverse' : ''
-                                } items-center justify-center sm:justify-between gap-24 sm:gap-10 px-4 sm:px-10 ${idx % 2 === 0 ? 'bg-gray-100' : 'bg-white'}`}
+                                } items-center justify-center lg:justify-between gap-24 lg:gap-10 px-4 sm:px-10 ${idx % 2 === 0 ? 'bg-gray-200' : 'bg-white'}`}
                         >
                             {/* Text Section */}
                             <div className="w-full max-w-xl text-center lg:text-left">
