@@ -22,7 +22,7 @@ const JoinWaitinglist = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 w-full">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8 w-full">
                 {/* Left Section - Heading */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -31,7 +31,7 @@ const JoinWaitinglist = () => {
                     viewport={{ once: false, amount: 0.2 }}
                     className="w-full lg:w-1/2 text-center lg:text-left"
                 >
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-semibold mb-4 leading-snug">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-semibold leading-snug">
                         Ready To Make Your Next Event Unforgettable?
                     </h1>
                 </motion.div>

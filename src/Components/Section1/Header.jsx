@@ -117,7 +117,7 @@ const Header = () => {
                     >
                         <div>
                             <img src={Logo} alt="Logo" className="w-[10rem] h-auto mb-6" />
-                            <div className="flex flex-col gap-8 mt-16">
+                            <div className="flex flex-col gap-6 mt-16">
                                 {navItems.map((item, index) =>
                                     item.isRoute ? (
                                         <motion.li key={item.label} variants={itemVariants} className="list-none py-4 text-sm">
@@ -149,18 +149,20 @@ const Header = () => {
                     initial={{ opacity: 0, y: 50, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-                    className="absolute z-20 container mx-auto p-6 w-3/4 md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-black/60 top-[27%] text-white"
+                    className="absolute z-20 container mx-auto p-6  w-3/4 md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-black/60 top-[32%] sm:top-[27%] text-white"
                 >
-                    <div className="flex flex-col gap-6 items-start">
+                    <div className="flex flex-col justify-between gap-5 h-auto">
                         <img src={Color} alt="Color Block" className="w-[80px] h-[16px]" />
+
                         <motion.h1
                             initial={{ opacity: 0, x: 80 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.9, ease: "easeOut", delay: 0.8 }}
-                            className="font-poppins text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-9 md:leading-[72px]"
+                            className="font-poppins text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-9 md:leading-[72px] line-clamp-2"
                         >
                             Your Perfect Plus One, On Demand
                         </motion.h1>
+
                         <motion.p
                             initial={{ opacity: 0, y: 80 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -169,30 +171,19 @@ const Header = () => {
                         >
                             Transform any occasion into a memorable experience with a carefully matched companion.
                         </motion.p>
-                        <Link to="/contactform">
-                            <button className="rounded-4xl bg-[#0066FF] text-white font-poppins hover:scale-105 transition-all duration-300 shadow-[0px_0px_20px_0px_#639AE19C]">
-                                <motion.span
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.9, delay: 0.3 }}
-                                    className="block sm:hidden text-sm lg:text-lg px-4 py-4 rounded-xl"
-                                >
-                                    Join
-                                </motion.span>
-                                <motion.span
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.9, delay: 0.3 }}
-                                    className="hidden sm:block px-[30px] py-[20px]"
-                                >
-                                    Join Waiting List Now
-                                </motion.span>
+
+                        <Link to="/contactform" className="hidden sm:block">
+                            <button className="rounded-4xl bg-[#0066FF] text-white font-poppins px-[30px] py-[20px] hover:scale-105 transition-all duration-300 shadow-[0px_0px_20px_0px_#639AE19C]">
+                                Join Waiting List Now
                             </button>
                         </Link>
+
                     </div>
+
                 </motion.div>
-            )}
-        </section>
+            )
+            }
+        </section >
     );
 };
 
