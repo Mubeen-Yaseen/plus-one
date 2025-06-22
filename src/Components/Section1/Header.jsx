@@ -39,7 +39,7 @@ const Header = () => {
 
     return (
         <section id="home" className='relative w-screen h-screen flex justify-center overflow-hidden'>
-            <img src={Hero} alt="Hero background" className='absolute w-full h-full inset-0 object-fill sm:object-cover brightness-[0.9] contrast-[0.95] blur-[0.5px]' />
+            <img src={Hero} alt="Hero background" className='absolute w-full h-full inset-0 object-cover brightness-[0.9] contrast-[0.95] blur-[0.5px]' />
 
             {isPageLoaded && (
                 <motion.nav
