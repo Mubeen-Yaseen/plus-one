@@ -117,7 +117,7 @@ const Header = () => {
                     >
                         <div>
                             <img src={Logo} alt="Logo" className="w-[10rem] h-auto mb-6" />
-                            <div className="flex flex-col gap-6 mt-16">
+                            <div className="flex flex-col gap-6 mt-20 ml-3">
                                 {navItems.map((item, index) =>
                                     item.isRoute ? (
                                         <motion.li key={item.label} variants={itemVariants} className="list-none py-4 text-sm">
