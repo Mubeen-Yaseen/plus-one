@@ -101,7 +101,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: -40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className='absolute z-10 container mx-auto w-11/12 flex justify-between items-center border-[1.5px] border-gray-300 rounded-[10px] px-6 py-3 top-[30px] bg-gradient-to-b from-grey-400/40 via-grey-500/40 to-gray-400/30 '
+                    className='absolute z-10 container mx-auto w-11/12 flex justify-between items-center border-[1.5px] border-gray-300 rounded-[10px] px-6 py-3 top-[30px] bg-gradient-to-b from-gray-400/20 via-gray-500/30 to-gray-400/70 '
                 >
                     <div className='flex gap-2 items-center'>
                         <img src={Icon} alt="Plus One Icon" className="w-auto h-auto" />
@@ -204,10 +204,10 @@ const Header = () => {
                     initial={{ opacity: 0, y: 50, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-                    className="absolute z-20 container mx-auto p-6 w-[85%] md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-gradient-to-b from-grey-400/40 via-grey-500/40 to-gray-400/30  shadow-xl top-[32%] sm:top-[27%] text-white border-2 border-gray-400"
+                    className="absolute z-20 container mx-auto p-6 w-[85%] md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-gradient-to-b from-gray-400/10 via-grey-500/20 to-gray-400/70  shadow-xl top-[32%] sm:top-[27%] text-white border-2 border-gray-400 "
 
                 >
-                    <div className="flex flex-col justify-between gap-5 h-auto">
+                    <div className="flex flex-col justify-between gap-5 h-{80}">
                         <img src={Color} alt="Color Block" className="w-[80px] h-[16px]" />
 
                         {/* First Line Typing Infinite with Deletion and Cursor */}
@@ -217,9 +217,10 @@ const Header = () => {
                                 loop={0}
                                 cursor
                                 cursorStyle="|"
-                                typeSpeed={70}
-                                deleteSpeed={50}
-                                delaySpeed={2000}
+                                typeSpeed={50}
+                                deleteSpeed={70}
+                                delaySpeed={1000}
+
                             />
                         </h1>
 
