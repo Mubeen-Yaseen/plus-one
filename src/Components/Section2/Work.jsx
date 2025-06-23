@@ -85,7 +85,7 @@ const Work = () => {
           </div>
 
           {/* Right Card with Animation */}
-          <div className="w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-2xl">
+          <div className="w-[350px] h-[230px] p-7 bg-white rounded-[16px] shadow-2xl mb-10 sm:mb-0">
             <motion.div
               initial="hidden"
               whileInView="visible"

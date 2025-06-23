@@ -42,7 +42,7 @@ const sections = [
 export default function Events() {
     return (
         <>
-            <h1 className="text-center font-bold text-4xl py-10 bg-white">
+            <h1 className="text-center font-bold text-4xl py-16 sm:py-10 bg-white">
                 Plus One Perfect For
             </h1>
             <div className="relative h-[600vh] bg-white">
