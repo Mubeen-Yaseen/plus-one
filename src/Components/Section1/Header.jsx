@@ -25,7 +25,7 @@ const Header = () => {
         const pageTimer = setTimeout(() => setIsPageLoaded(true), 100);
         const sliderInterval = setInterval(() => {
             setCurrent((prev) => (prev + 1) % images.length);
-        }, 3000);
+        }, 5000);
 
         return () => {
             clearTimeout(pageTimer);
