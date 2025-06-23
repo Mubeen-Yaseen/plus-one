@@ -204,7 +204,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: 50, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-                    className="absolute z-20 container mx-auto p-6 w-3/4 md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-gradient-to-b from-grey-400/40 via-grey-500/40 to-gray-400/30  shadow-xl top-[32%] sm:top-[27%] text-white border-2 border-gray-400"
+                    className="absolute z-20 container mx-auto p-6 w-[80%] md:w-[55%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[24px] bg-gradient-to-b from-grey-400/40 via-grey-500/40 to-gray-400/30  shadow-xl top-[32%] sm:top-[27%] text-white border-2 border-gray-400"
 
                 >
                     <div className="flex flex-col justify-between gap-5 h-auto">
